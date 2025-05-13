@@ -1,0 +1,27 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Custom styles to complement Tailwind */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#weatherIcon i {
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    #currentWeather .flex {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    #currentWeather .text-right {
+        text-align: center;
+        margin-top: 1rem;
+    }
+}

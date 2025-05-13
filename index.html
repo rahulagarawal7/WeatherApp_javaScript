@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold text-center text-blue-800 mb-8">Weather Dashboard</h1>
+        
+        <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden p-6 mb-8">
+            <div class="flex flex-col md:flex-row gap-2 mb-4">
+                <div class="relative flex-grow">
+                    <input type="text" id="cityInput" placeholder="Enter a City Name" 
+                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <div id="recentCitiesDropdown" class="hidden absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-lg shadow-lg">
+                        <!-- Recent cities will be added here dynamically -->
+                    </div>
+                </div>
+                <button id="searchBtn" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition duration-200">
+                    Search
+                </button>
+            </div>
+            
+            <div class="text-center mb-4">
+                <span class="text-gray-600">Or</span>
+            </div>
+            
+            <button id="currentLocationBtn" class="w-full bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition duration-200 mb-6">
+                <i class="fas fa-location-arrow mr-2"></i>Use Current Location
+            </button>
+            
+            <!-- Current Weather Display -->
+            <div id="currentWeather" class="hidden bg-blue-50 rounded-lg p-4 mb-6">
+                <div class="flex justify-between items-center mb-2">
+                    <h2 id="locationName" class="text-xl font-semibold text-blue-800"></h2>
+                    <span id="currentDate" class="text-gray-600"></span>
+                </div>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <div id="weatherIcon" class="text-5xl mr-4"></div>
+                        <div>
+                            <div id="temperature" class="text-3xl font-bold"></div>
+                            <div id="weatherDescription" class="text-gray-600"></div>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <div id="windSpeed" class="text-gray-700"></div>
+                        <div id="humidity" class="text-gray-700"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+             <!-- Error Message -->
+             <div id="errorMessage" class="hidden max-w-md mx-auto bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-8 rounded">
+                <p id="errorText"></p>
+            </div>
+        
+        <!-- 5-Day Forecast -->
+        <div id="forecastContainer" class="hidden max-w-4xl mx-auto">
+            <h2 class="text-2xl font-bold text-blue-800 mb-4 text-center">5-Day Forecast</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                <!-- Forecast cards will be added here dynamically -->
+            </div>
+        </div>
+        
+   
+    </div>
+    
+    <footer class="text-center text-gray-600 py-4">
+        Weather Forecast 
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
